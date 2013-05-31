@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsy.js</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+	<style>
+		
+	</style>
+</head>
+<body>
+	<p id="output"></p>
+	<script src="../responsy.js"></script>
+	<script>
+		var outputFunction = function(){
+			var output = 'width: ' + window.innerWidth;
+			for(var i = 0; i < responsy.getActiveBreakpoints().length; i++){
+				output += ' ' + responsy.getActiveBreakpoints()[i];
+			}
+			document.getElementById('output').innerHTML = output;
+		}
+		
+		responsy.addCallback('large','output',outputFunction);
+		responsy.addCallback('desktop','output',outputFunction);
+		responsy.addCallback('tablet','output',outputFunction);
+		responsy.addCallback('tabletPhone','output',outputFunction);
+		responsy.addCallback('phone','output',outputFunction);
+	</script>
+</body>
+</html>
