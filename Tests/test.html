@@ -12,19 +12,21 @@
 	<p id="output"></p>
 	<script src="../responsy.js"></script>
 	<script>
-		var outputFunction = function(){
-			var output = 'width: ' + window.innerWidth;
-			for(var i = 0; i < responsy.getActiveBreakpoints().length; i++){
-				output += ' ' + responsy.getActiveBreakpoints()[i];
-			}
-			document.getElementById('output').innerHTML = output;
-		}
-		
-		responsy.addCallback('large','output',outputFunction);
-		responsy.addCallback('desktop','output',outputFunction);
-		responsy.addCallback('tablet','output',outputFunction);
-		responsy.addCallback('tabletPhone','output',outputFunction);
-		responsy.addCallback('phone','output',outputFunction);
+		responsy.addCallback('large','output',function(){
+			document.getElementById('output').innerHTML = window.innerWidth + ' large';
+		});
+		responsy.addCallback('desktop','output',function(){
+			document.getElementById('output').innerHTML = window.innerWidth + ' desktop';
+		});
+		responsy.addCallback('tablet','output',function(){
+			document.getElementById('output').innerHTML = window.innerWidth + ' tablet';
+		});
+		responsy.addCallback('phoneTablet','output',function(){
+			document.getElementById('output').innerHTML = window.innerWidth + ' tabletPhone';
+		});
+		responsy.addCallback('phone','output',function(){
+			document.getElementById('output').innerHTML = window.innerWidth + ' phone';
+		});
 	</script>
 </body>
 </html>
