@@ -1,3 +1,12 @@
+/*
+ * Responsy.js
+ *
+ * Copyright 2013 Sebastian Rosengren
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+ 
 var responsy = (function() {
         //Private properties and functions
     var privateObject = (function(privateModule){
